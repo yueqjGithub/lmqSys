@@ -5,7 +5,7 @@ const MainLayout = (props: Props) => {
   console.log(children)
   return (
     <div className='page flex-row flex-jst-btw flex-ali-center'>
-      {children.component}
+      {children}
     </div>
   )
 }
