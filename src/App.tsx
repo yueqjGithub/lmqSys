@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Context } from './store/context'
 import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 
@@ -13,10 +13,13 @@ function App () {
       <Router>
         <Switch>
           <Route path='/login' key='Login' render={() => <Login Store={Store} dispatch={dispatch} />}></Route>
-          <Route path='/layout' key='layout'>
-            <MainLayout Store={Store} dispatch={dispatch}>
-              <Route path='/index' key='index' render={() => <IndexPage Store={Store} dispatch={dispatch} />}></Route>
-            </MainLayout>
+          <Route path='/' render={() => {
+            return (
+              <MainLayout Store={Store} dispatch={dispatch}>
+                <Route path='/index' key='index' render={() => <IndexPage Store={Store} dispatch={dispatch} />}></Route>
+              </MainLayout>
+            )
+          }}>
           </Route>
         </Switch>
       </Router>
