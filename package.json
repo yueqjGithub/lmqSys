@@ -8,6 +8,8 @@
   },
   "dependencies": {
     "@types/react-router-dom": "^5.1.8",
+    "antd": "^4.16.13",
+    "axios": "^0.21.1",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-router": "^5.2.0",

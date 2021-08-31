@@ -1,14 +1,15 @@
 import React, { useContext } from 'react'
 import { Context } from './store/context'
-import { HashRouter as Router, Switch } from 'react-router-dom'
+import { Router, Switch } from 'react-router-dom'
 import AuthRoute from './routes/authRoute'
 import { rouetConfig } from './routes/routes'
+import { history } from './service/axios'
 
 function App (props:any) {
   const { Store, dispatch } = useContext(Context)
   return (
     <div className='page'>
-      <Router>
+      <Router history={history}>
         <Switch>
           <AuthRoute config={rouetConfig} Store={Store} dispatch={dispatch} {...props}></AuthRoute>
         </Switch>
