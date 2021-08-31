@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Context } from './store/context'
 import { HashRouter as Router, Switch } from 'react-router-dom'
-import AuthRoute from './components/authRoute'
+import AuthRoute from './routes/authRoute'
 import { rouetConfig } from './routes/routes'
 
 function App (props:any) {
