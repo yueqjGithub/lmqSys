@@ -1,11 +1,18 @@
 import React from "react"
 
-const MainLayout = (props: Props) => {
+type Props = {
+  children: Element | JSX.Element,
+  [key:string]: any
+}
+
+const MainLayout = (props:Props) => {
   const { children } = props
-  console.log(children)
   return (
     <div className='page flex-row flex-jst-btw flex-ali-center'>
-      {children}
+      <div className='sideMenu flex-1'>菜单</div>
+      <div className='main flex-3'>
+        {children}
+      </div>
     </div>
   )
 }

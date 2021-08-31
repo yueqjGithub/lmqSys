@@ -1,6 +1,6 @@
 import React from 'react'
 
-const IndexPage = (props:Props) => {
+const IndexPage = () => {
   return (
     <div>I AM INDEX</div>
   )

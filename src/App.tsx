@@ -1,26 +1,16 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { Context } from './store/context'
-import { HashRouter as Router, Route, Switch } from 'react-router-dom'
+import { HashRouter as Router, Switch } from 'react-router-dom'
+import AuthRoute from './components/authRoute'
+import { rouetConfig } from './routes/routes'
 
-import Login from './pages/Login/Login'
-import MainLayout from './layout/MainLayout'
-import IndexPage from './pages/index'
-
-function App () {
+function App (props:any) {
   const { Store, dispatch } = useContext(Context)
   return (
     <div className='page'>
       <Router>
         <Switch>
-          <Route path='/login' key='Login' render={() => <Login Store={Store} dispatch={dispatch} />}></Route>
-          <Route path='/' render={() => {
-            return (
-              <MainLayout Store={Store} dispatch={dispatch}>
-                <Route path='/index' key='index' render={() => <IndexPage Store={Store} dispatch={dispatch} />}></Route>
-              </MainLayout>
-            )
-          }}>
-          </Route>
+          <AuthRoute config={rouetConfig} Store={Store} dispatch={dispatch} {...props}></AuthRoute>
         </Switch>
       </Router>
     </div>

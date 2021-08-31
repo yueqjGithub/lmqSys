@@ -1,3 +1,5 @@
-declare type Props = {
-  [key:string]: any
+declare type RouteSingle = {
+  path: string,
+  component?: any,
+  auth?: boolean 
 }

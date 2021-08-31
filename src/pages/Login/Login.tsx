@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default (props:Props) => {
+export default () => {
   return (
     <div>I AM LOGIN</div>
   )
