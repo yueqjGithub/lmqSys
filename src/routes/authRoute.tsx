@@ -3,7 +3,7 @@ import { Route, Redirect, withRouter } from 'react-router'
 import MainLayout from '../layout/MainLayout'
 
 type Props = {
-  location: Location,
+  location: any,
   config: RouteSingle[]
 }
 

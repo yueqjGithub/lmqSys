@@ -1,4 +1,6 @@
 import React from "react"
+import { Layout } from 'antd'
+import styles from './layout.module.scss'
 
 type Props = {
   children: Element | JSX.Element,
@@ -8,11 +10,18 @@ type Props = {
 const MainLayout = (props:Props) => {
   const { children } = props
   return (
-    <div className='page flex-row flex-jst-btw flex-ali-center'>
-      <div className='sideMenu flex-1'>菜单</div>
-      <div className='main flex-3'>
-        {children}
-      </div>
+    <div className='page'>
+      <Layout>
+        <Layout.Header></Layout.Header>
+        <Layout>
+          <Layout.Sider></Layout.Sider>
+          <Layout.Content style={{height: 'calc(100vh - 64px)', padding: '.2rem'}}>
+            <div className={`${styles.contentOut} scroll-bar`}>
+              {children}
+            </div>
+          </Layout.Content>
+        </Layout>
+      </Layout>
     </div>
   )
 }

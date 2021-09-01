@@ -16,7 +16,9 @@ export const rouetConfig:RouteSingle[] = [
   {
     path: '/index',
     component: IndexPage,
-    auth: true
+    auth: true,
+    isMenu: true,
+    menuName: '首页'
   },
   {
     path: '/404',
