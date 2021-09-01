@@ -29,6 +29,7 @@ export default (props:Props) => {
         message.warning(data.message)
       } else {
         window.localStorage.setItem('token', data.token)
+        window.localStorage.setItem('nickname', data.nickname)
         history.push('/index')
       }
     } catch (err) {
